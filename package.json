@@ -1,0 +1,47 @@
+{
+  "name": "egg-nuxt-template",
+  "version": "1.0.0",
+  "author": "灰白",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "code-auto": "^1.1.0",
+    "egg": "^1.7.0",
+    "egg-scripts": "^1.0.0",
+    "nuxt": "^1.0.0-rc8"
+  },
+  "devDependencies": {
+    "autod": "^2.9.0",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.1.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.9.0",
+    "eslint": "^4.3.0",
+    "eslint-config-egg": "^5.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon",
+    "stop": "egg-scripts stop",
+    "dev": "egg-bin dev",
+    "build": "nuxt build && backpack build",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "codeauto": "node autocode.js"
+  },
+  "ci": {
+    "version": "6, 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT"
+}

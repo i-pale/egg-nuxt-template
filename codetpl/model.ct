@@ -1,0 +1,34 @@
+<Template output='./app/model'  asfsaf="fsaf">
+/* jshint indent: 2 */
+
+module.exports = app => {
+  const sequelize = app.Sequelize;
+  const entity = {
+    {{#columns.forEach(function(column,index){ }}
+        {{column.name}}: {
+            type: sequelize.{{column.CodeType}},
+            allowNull: {{column.allowNull}},
+            {{column.primaryKey?"primaryKey:"+column.primaryKey+",":""}}
+            {{column.autoIncrement?"autoIncrement:"+column.autoIncrement:""}}
+        }{{index==(columns.length-1)?'':','}}
+      {{# }); }} 
+  }
+  const nav_cat = app.model.define('{{tableName}}', entity, {
+    tableName: '{{tableName}}'
+  });
+  {{tableName}}.getModel=model=>{
+							if(typeof model!=="object"){
+								throw new  Error("请求参数错误");
+								return false;
+							  }
+							let newobj={};
+							for (var key in model) {
+								if (entity.hasOwnProperty(key)) {
+									newobj[key]=model[key];
+								}
+							}
+						  return newobj;
+						}
+  return {{tableName}};
+};
+</Template>
