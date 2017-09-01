@@ -2,7 +2,7 @@
   "name": "egg-nuxt-template",
   "version": "1.0.0",
   "author": "灰白",
-  "description": "",
+  "description": "egg+nuxt+vue+code-auto",
   "private": true,
   "dependencies": {
     "code-auto": "^1.1.0",
