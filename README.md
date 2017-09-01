@@ -5,6 +5,9 @@
 ## 说明
 
 模板中集成了我自己写的代码生成器 [code-auto](https://github.com/i-pale/Code-auto)
+
+配置再根目录下的[auto-code.js中](blob/master/auto-code.js),详细配置移步[code-auto](https://github.com/i-pale/Code-auto)
+
 可自行修改配置使用，不需要的可以删掉。
 
 ### Development
